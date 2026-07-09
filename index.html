@@ -8,13 +8,17 @@
       name="description"
       content="Aesthetic and tech-inspired portfolio website for Kevin Charles S. Datulayta."
     />
+    <link rel="icon" href="brand-icon.png" type="image/png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="noise"></div>
     <div class="page-shell">
       <nav class="topbar">
-        <a class="brand" href="#home">KCD</a>
+        <a class="brand" href="#home">
+          <img class="brand-icon" src="main.png" alt="Brand icon" />
+          KCD
+        </a>
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="#work">Work</a>
@@ -84,8 +88,8 @@
             <h2>Experience & Capabilities</h2>
           </div>
           <p>
-           I have extensive experience in hardware engineering, specializing in custom DIY electronics, microcontrollers, and hardware modifications. I developed and distributed specialized mentalism utility devices, including Hacker by Les French Twins and premium Pro Devices. I independently managed sales, logistics, and nationwide deployment of technical gadgets across the Philippines, serving customers throughout Luzon, Visayas, and Mindanao. I also provided reliable post-sale technical support, diagnostics, troubleshooting, and hardware repair services, ensuring long-term customer satisfaction and product reliability.
-
+           I have extensive experience in hardware engineering, specializing in custom DIY electronics, microcontrollers, and hardware modifications. I have built, customized, and distributed specialized mentalism utility devices, including Hacker by Les French Twins and premium Pro Devices. I independently managed sales, logistics, and nationwide deployment of these technical gadgets across the Philippines, serving customers throughout Luzon, Visayas, and Mindanao. I also provided reliable post-sale technical support, diagnostics, troubleshooting, and hardware repair services, ensuring long-term customer satisfaction and product reliability.
+<br></br>
 Beyond hardware engineering, I have designed logos and branding materials for companies, small businesses, and Facebook gaming channels, creating distinctive visual identities tailored to each client's brand. I have also developed fully customized websites for a variety of clients, delivering responsive, user-friendly, and visually engaging web solutions designed to meet their specific needs and objectives.</p>
 </section>
 
@@ -145,7 +149,11 @@ Beyond hardware engineering, I have designed logos and branding materials for co
             <div class="coverflow-stage" id="coverflowStage">
               <div class="coverflow-card active">
                 <img src="HIGH SCHOOL DEPLOMA.png" alt="High School Diploma" />
-                <div class="coverflow-caption">Loyola High School</div>
+                <div class="coverflow-caption">LHS Diploma</div>
+              </div>
+              <div class="coverflow-card">
+                <img src="SHS DIPLOMA.png" alt="SHS DIPLOMA" />
+                <div class="coverflow-caption">SHS Diploma</div>
               </div>
               <div class="coverflow-card">
                 <img src="CERTIFICATE OF RECOGNITION.png" alt="Certificate of Recognition" />
@@ -184,9 +192,13 @@ Beyond hardware engineering, I have designed logos and branding materials for co
           <div class="highlight-body">
             <div class="highlight-text">
               <ul class="achievements">
-                  <li>   Close-Up Magic & Mentalism — Passionate performer specializing in sleight-of-hand, psychological illusions, and mind-reading demonstrations, with experience using custom-built electronic utility devices to enhance live performances.</li>
+                  <li>   Close-Up Magic & Mentalism — Passionate performer specializing in sleight-of-hand, psychological illusions, and mind-reading demonstrations, with experience using custom-built electronic utility devices to enhance live performances. Watch highlights of my performances on <a href="https://www.instagram.com/_kevsss00" style="color: white;">
+    Instagram
+</a>.</li>
               
-                <li>   Beyblade X Player — Competitive Beyblade X player with consistent top-tier finishes in regional Swiss-system tournaments. Achieved 3rd Runner-Up among 129 competitors at the Davao Golden Xpedition and was a featured player at the T'nalak Festival Tournament in Koronadal, South Cotabato. Demonstrates strategic thinking, adaptability, and competitive performance in high-level events..</li>
+                <li>   Beyblade X Player — Competitive Beyblade X player with consistent top-tier finishes in regional Swiss-system tournaments. Achieved 3rd Runner-Up among 129 competitors at the Davao Golden Xpedition and was a featured player at the T'nalak Festival Tournament in Koronadal, South Cotabato. Demonstrates strategic thinking, adaptability, and competitive performance in high-level events. <a href="https://drive.google.com/drive/folders/1GQXT40igAP5OJAHLVfwIW-deDRi_tJUx?usp=sharing" style="color: white;">
+    View Photos.
+</a>.</li>
                 
               </ul>
             </div>
@@ -210,7 +222,7 @@ Beyond hardware engineering, I have designed logos and branding materials for co
         </section>
       </main>
     </div>
-    <div class="page-watermark">© K E V I N C H A R L E S D.</div>
+    <div class="page-watermark">©Kevsmagic</div>
     <div class="image-overlay" id="imageOverlay">
       <div class="close-text" id="closeOverlay">click to close</div>
       <img id="overlayImage" src="skill-logo-1920x1080.png" alt="Logo made for past clients enlarged" />
@@ -335,7 +347,14 @@ Beyond hardware engineering, I have designed logos and branding materials for co
 
         cards.forEach((card, index) => {
           card.addEventListener('click', () => {
-            if (index !== currentIndex) {
+            if (index === currentIndex) {
+              const img = card.querySelector('img');
+              if (img) {
+                overlayImage.src = img.src;
+                overlayImage.alt = img.alt || 'Carousel image enlarged';
+                overlay.classList.add('active');
+              }
+            } else {
               goToSlide(index);
             }
           });
