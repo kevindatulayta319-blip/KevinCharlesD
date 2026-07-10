@@ -98,7 +98,7 @@ html {
   text-align: center;
   color: rgba(181, 181, 174, 0.72);
   font-size: 0.75rem;
-  letter-spacing: 0.34em;
+  letter-spacing: normal;
   margin: 18px 0 8px;
   opacity: 0.85;
 }
@@ -108,11 +108,21 @@ html {
   color: var(--text);
   font-weight: 700;
   letter-spacing: 0.28em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .nav-links {
   display: flex;
-  gap: 16px;
+  gap: 28px;
 }
 
 .nav-links a {
@@ -121,6 +131,7 @@ html {
   font-size: 0.95rem;
   transition: 0.3s ease;
   position: relative;
+  padding: 8px 4px;
 }
 
 .nav-links a:hover {
@@ -717,7 +728,7 @@ strong {
 
 .coverflow-stage {
   position: relative;
-  height: 360px;
+  height: 340px;
   perspective: 1600px;
   display: flex;
   align-items: center;
@@ -726,8 +737,8 @@ strong {
 
 .coverflow-card {
   position: absolute;
-  width: min(92%, 520px);
-  aspect-ratio: 16 / 9;
+  width: min(92%, 570px);
+  height: 390px;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12);
