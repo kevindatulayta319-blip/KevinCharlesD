@@ -169,7 +169,7 @@ html {
   gap: 24px;
   align-items: center;
   padding: 34px;
- 
+  border-radius: 32px;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.84), rgba(0, 0, 0, 0.55)),
     url("letter k.png") center/cover no-repeat;
   box-shadow: var(--shadow);
