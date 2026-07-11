@@ -17,6 +17,13 @@ html {
   scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: 'Excess V';
+  src: url('Excess V.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
@@ -27,6 +34,8 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
+
+
 
 body::before {
   content: "";
@@ -106,6 +115,7 @@ html {
 .brand {
   text-decoration: none;
   color: var(--text);
+  font-family: 'Excess V', sans-serif;
   font-weight: 700;
   letter-spacing: 0.28em;
   display: inline-flex;
@@ -159,15 +169,31 @@ html {
   gap: 24px;
   align-items: center;
   padding: 34px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 28px;
+ 
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.84), rgba(0, 0, 0, 0.55)),
-    url("photo_2026-07-07_14-15-54.jpg") center/cover no-repeat;
+    url("main.png") center/cover no-repeat;
   box-shadow: var(--shadow);
   backdrop-filter: blur(16px);
   overflow: hidden;
   position: relative;
   animation: fadeInUp 0.8s ease-out;
+}
+
+
+
+.hero-image {
+  display: block;
+  width: 100%;
+  border-radius: 26px;
+ 
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+  object-fit: cover;
+}
+
+@media (max-width: 960px) {
+  .hero-image-wrap {
+    display: none;
+  }
 }
 
 .hero-text {
@@ -274,6 +300,10 @@ h1 {
 .button.primary {
   border-color: var(--accent);
   color: var(--accent);
+}
+.button.primary:hover {
+ border-color: var(--accent);
+  color: #000;
 }
 
 .button.secondary {
@@ -425,7 +455,11 @@ strong {
 }
 
 #about p,
-#work p,
+#work p {
+  text-align: justify;
+  color: var(--muted);
+}
+
 .highlight-text,
 .highlight-text .achievements,
 .highlight-text .achievements li {
