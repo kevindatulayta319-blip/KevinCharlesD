@@ -424,15 +424,13 @@ strong {
   margin-bottom: 12px;
 }
 
-/* Ensure the main descriptive text in the About and Experience panels is not bold and uses the muted color */
-.panel:nth-of-type(1) p,
-.panel:nth-of-type(1) li,
-.panel:nth-of-type(2) p,
-.panel:nth-of-type(2) li {
-  font-weight: 400;
-  color: var(--muted);
+#about p,
+#work p,
+.highlight-text,
+.highlight-text .achievements,
+.highlight-text .achievements li {
+  text-align: justify;
 }
-
 .skill-icons {
   display: flex;
   flex-wrap: wrap;
